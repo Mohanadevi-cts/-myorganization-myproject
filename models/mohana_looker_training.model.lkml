@@ -15,6 +15,7 @@ explore: distribution_centers {}
 explore: etl_jobs {}
 
 explore: events {
+  group_label: "USER"
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
@@ -70,4 +71,6 @@ explore: products {
   }
 }
 
-explore: users {}
+explore: users {
+  label: "USER"
+}
